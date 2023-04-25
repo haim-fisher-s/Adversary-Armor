@@ -23,7 +23,7 @@ long_description = "{}\n{}".format(
 
 setup(
     name="Adversary-Armor",
-    version='0.1.0',
+    version='0.1.1',
     description="A repository that provides innovative solution to armor against adversarial attacks.",
     long_description=long_description,
     long_description_content_type="text/x-rst",
