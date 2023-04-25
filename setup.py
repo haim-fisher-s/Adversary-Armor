@@ -2,8 +2,10 @@
 # -*- encoding: utf-8 -*-
 """Setup script for Adversary-Armor."""
 from __future__ import absolute_import, print_function
+
 from glob import glob
 from os.path import basename, dirname, join, splitext
+
 from setuptools import find_packages, setup
 
 
@@ -17,11 +19,11 @@ def read(*names, **kwargs):
 long_description = "{}\n{}".format(
     read("README.rst"),
     read("CHANGELOG.rst"),
-)
+    )
 
 setup(
     name="Adversary-Armor",
-    version="0.1.0",
+    version='0.1.0',
     description="A repository that provides innovative solution to armor against adversarial attacks.",
     long_description=long_description,
     long_description_content_type="text/x-rst",
@@ -49,18 +51,18 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Topic :: Scientific/Engineering",
-    ],
+        ],
     project_urls={
         "webpage": "https://github.com/haim-fisher-s/Adversary-Armor",
-        "Documentation": "https://github.com/haim-fisher-s/Adversary-Armor/blob/main/README.md",
+        "Documentation": "https://github.com/haim-fisher-s/Adversary-Armor/blob/main/README.rst",
         "Changelog": "https://github.com/haim-fisher-s/Adversary-Armor/blob/main/CHANGELOG.rst",
         "Issue Tracker": "https://github.com/haim-fisher-s/Adversary-Armor/issues",
         "Discussion Forum": "https://github.com/haim-fisher-s/Adversary-Armor/discussions",
-    },
+        },
     keywords=[
         "Adversary",
         "Defense",
-    ],
+        ],
     python_requires=">=3.7, <4",
     install_requires=[],  # https://stackoverflow.com/questions/14399534
     extras_require={},
@@ -68,6 +70,6 @@ setup(
     entry_points={
         "console_scripts": [
             "",
-        ]
-    },
-)
+            ]
+        },
+    )

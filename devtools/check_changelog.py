@@ -24,7 +24,7 @@ with open(changelog, 'r') as fin:
                 '',
                 'CHANGELOG.rst not updated:',
                 'Please add a summary of your additions as described in:',
-                'https://python-project-skeleton.readthedocs.io'
+                'https://Adversary-Armor.readthedocs.io'
                 '/en/latest/contributing.html#update-changelog.',
                 '',
                 ]
