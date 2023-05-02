@@ -6,7 +6,7 @@ source =
 [run]
 branch = true
 source =
-    sampleproject
+    advarmor
 parallel = true
 
 [report]

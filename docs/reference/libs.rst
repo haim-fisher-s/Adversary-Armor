@@ -1,13 +1,13 @@
 Libs
 ====
 
-.. automodule:: sampleproject.libs
+.. automodule:: advarmor.libs
     :members:
     :undoc-members:
 
 Something
 ---------
 
-.. automodule:: sampleproject.libs.samplemodule
+.. automodule:: advarmor.libs.samplemodule
     :members:
     :undoc-members:

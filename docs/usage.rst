@@ -4,6 +4,6 @@ Usage
 **This is an example page for a real project.** Describe here examples on how
 to use your software!
 
-To use ``sampleproject``::
+To use ``advarmor``::
 
-    import sampleproject
+    import advarmor

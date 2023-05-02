@@ -16,7 +16,7 @@ the contrary, it saved many issues related to ``import`` statements. Either
 importing from the repository or the installed version? The ``src`` guarantees
 stable imports. More on ionel's blog (see also `src-nosrc example`_).
 
-The ``src/sampleproject`` folder hosts the actual source of the project. In the
+The ``src/advarmor`` folder hosts the actual source of the project. In the
 current version of this template, I don't discuss how to organize a source code
 of a project. I am looking forward doing that in future versions.
 
