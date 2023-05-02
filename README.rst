@@ -5,4 +5,4 @@ A repository that provides innovative solution to armor against adversarial atta
 
 Version
 -------
-v0.1.1
+v0.1.2
