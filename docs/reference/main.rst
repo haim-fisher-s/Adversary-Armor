@@ -1,10 +1,10 @@
-sampleproject
+advarmor
 =============
 
 .. testsetup::
 
-    from sampleproject import *
+    from advarmor import *
 
-.. automodule:: sampleproject
+.. automodule:: advarmor
     :members:
 

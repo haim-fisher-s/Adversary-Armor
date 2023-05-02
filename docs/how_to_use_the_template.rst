@@ -29,14 +29,14 @@ you need to change in the files to adapt the template to you and your project:
 ``setup.py`` and in ``AUTHORS.rst`` there is also my full written name, rename
 it to yours.
 
-2. Where ever it says ``sampleproject`` change it for the name of your project.
+2. Where ever it says ``advarmor`` change it for the name of your project.
 That is, what you would like your users to import.
 
 .. code::
 
-    import sampleproject
+    import advarmor
 
-3. In ``setup.py`` rename :code:`jmct-sampleproject` for the name your project will
+3. In ``setup.py`` rename :code:`jmct-advarmor` for the name your project will
 have at PyPI. Usually this is the same as the name you decided above.
 
 4. Replace ``python-project-skeleton`` to the name of the repository of your

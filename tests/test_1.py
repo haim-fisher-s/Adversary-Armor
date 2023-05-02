@@ -1,11 +1,11 @@
 """Performs general tests."""
-import amodule
-from sampleproject.libs import samplemodule as SM
+import main
+from advarmor.libs import tokenizer as SM
 
 
 def test_amodule():
     """Test amodule.hello()."""
-    amodule.hello()
+    main.hello()
 
 
 def test_true():

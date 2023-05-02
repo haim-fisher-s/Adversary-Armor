@@ -12,5 +12,4 @@ Contributing
     ``CONTRIBUTING.rst`` file. You can also point your community to that file (or
     the docs) to guide them in the steps required to interact with you project.
 
-.. include:: ../CONTRIBUTING.rst
    :start-after: .. start-here
