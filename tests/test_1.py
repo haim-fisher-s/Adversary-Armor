@@ -1,11 +1,11 @@
 """Performs general tests."""
 import main
-from advarmor.libs import tokenizer as SM
+from advarmor.libs.tokenizer import Tokenizer
 
 
-def test_amodule():
+def test_main():
     """Test amodule.hello()."""
-    main.hello()
+    main.main()
 
 
 def test_true():
@@ -15,15 +15,5 @@ def test_true():
 
 def test_sampleclass():
     """Test samplemodule SampleClass true method."""
-    s = SM.SampleClass()
-    assert s.true() is True
-
-
-def test_sampleclass_false():
-    """Test samplemodule SampleClass false classmethod."""
-    assert SM.SampleClass.false() is False
-
-
-def test_undoc_func():
-    """Test the undocumented function."""
-    SM.this_is_and_undocumented_function("some")
+    t = Tokenizer()
+    t.generate_tokens()

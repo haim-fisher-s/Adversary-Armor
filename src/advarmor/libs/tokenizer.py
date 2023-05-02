@@ -1,32 +1,25 @@
 """
-samplemodule that performs sample operations.
+Module responsible to creates tokens based on model parameters.
 
 Contains:
-    - SampleClass
+    - Tokenizer
 """
+import logging
+
+from . import logging_config  # noqa
 
 
-def this_is_and_undocumented_function(some_parameter):  # noqa: D103
-    return
+logger = logging.getLogger(__name__)
 
 
-class SampleClass:
-    """Documentation of the SampleClass."""
+class Tokenizer:
+    """Class to generate the tokens."""
 
     def __init__(self):
-        """Initiatlizes samples class."""
+        """Initiatlizes Tokenizer class."""
         return
 
-    @staticmethod
-    def true():
-        """Return True my friend."""
-        return True
-
     @classmethod
-    def false(cls):
-        """
-        Docstrings should not start with Returns...
-
-        Nonetheless, returns False
-        """
-        return False
+    def generate_tokens(self):
+        """Generate tokens based on model parameters."""
+        logger.debug('generate_tokens started')
