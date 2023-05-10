@@ -1,4 +1,6 @@
 """Performs general tests."""
+import tensorflow as tf
+
 import main
 from advarmor.libs.tokenizer import Tokenizer
 
@@ -15,5 +17,9 @@ def test_true():
 
 def test_sampleclass():
     """Test samplemodule SampleClass true method."""
-    t = Tokenizer()
+    model = tf.keras.applications.InceptionV3(include_top=True,
+                                              weights='imagenet')
+    
+    model.trainable = False
+    t = Tokenizer(model)
     t.generate_tokens()

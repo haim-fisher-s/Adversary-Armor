@@ -1,6 +1,11 @@
 """logging config for the project."""
 import logging
+import os
 
+
+# Delete log file before each run
+if os.path.exists('log.txt'):
+    os.remove('log.txt')
 
 # Create a root logger
 logger = logging.getLogger()
