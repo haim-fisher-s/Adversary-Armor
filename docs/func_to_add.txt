@@ -1,0 +1,69 @@
+Compute the sensitivity scores: You mentioned that you plan to use sensitivity analysis to identify the important neurons in the model. To do this, you will need to compute the sensitivity scores for each neuron in the model. You can compute the sensitivity scores using the approach you mentioned earlier, which involves computing the derivative of the output with respect to the activation of each neuron.
+
+	Task title: Compute sensitivity scores for the model
+Task content:
+
+Compute sensitivity score for a single image:
+Given a single image, the first step is to compute the gradients of the output of the model with respect to the activations of each neuron in the model.
+This can be done using automatic differentiation in the deep learning framework being used.
+The gradient computation can be done using the loss function of the model and the input image.
+Next, the sensitivity score for each neuron can be computed as the sum of the squares of the gradients with respect to that neuron's activation.
+
+
+Compute sensitivity scores for the entire model:
+To compute the sensitivity scores for the entire model, the sensitivity scores for each neuron can be averaged across all the images in the dataset.
+This will give a single sensitivity score for each neuron in the model, representing its importance across the entire dataset.
+
+Normalize the sensitivity scores:
+The sensitivity scores can be normalized to ensure that they are in the same range as the weights of the neurons.
+This can be done by dividing the sensitivity score of each neuron by the sum of the sensitivity scores for all the neurons in the layer.
+
+Select the important neurons:
+Once the sensitivity scores have been computed and normalized, the neurons with the highest sensitivity scores can be identified as the most important neurons in the model.
+A threshold value can be set to determine which neurons are considered important.
+The threshold can be chosen based on the percentage of neurons to be pruned or based on a specific value that represents the minimum importance level for a neuron.
+
+
+
+""" !Compute sensitivity scores for the entire mode!
+import tensorflow as tf
+from art.attacks.evasion import FastGradientMethod
+from art.estimators.classification import KerasClassifier
+import numpy as np
+
+# Load the InceptionV3 model with pre-trained weights on ImageNet
+model = tf.keras.applications.InceptionV3(include_top=True, weights='imagenet')
+
+# Create a KerasClassifier from the model
+classifier = KerasClassifier(model=model, clip_values=(0, 255))
+
+# Load the ImageNet dataset
+(x_train, y_train), _ = tf.keras.datasets.imagenet.load_data()
+
+# Normalize the input data to be between 0 and 1
+x_train = x_train.astype(np.float32) / 255
+
+# Create the FGSM attack
+attack = FastGradientMethod(estimator=classifier, eps=0.3)
+
+# Apply the attack to the entire dataset
+x_adv = attack.generate(x=x_train)
+
+# Compute sensitivity scores for each neuron in the model
+sensitivity_scores = np.zeros(model.layers[-1].output_shape[1])
+for x in x_adv:
+    # Get the output of the last layer for the adversarial input
+    output = model.predict(np.array([x]))
+    # Compute the derivative of the output with respect to the activation of each neuron
+    derivative = tf.gradients(output, model.layers[-2].output)[0]
+    # Compute the sensitivity score for each neuron
+    sensitivity = np.mean(np.abs(derivative.numpy()), axis=0)
+    # Add the sensitivity scores to the total
+    sensitivity_scores += sensitivity
+
+# Normalize the sensitivity scores
+sensitivity_scores /= len(x_adv)
+
+# Select the important neurons
+important_neurons = np.argsort(sensitivity_scores)[-100:]
+"""
